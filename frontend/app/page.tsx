@@ -31,7 +31,7 @@ export default function Home() {
     <main>
       <h1>{led ? "💡 Luz Encendida" : "⚫ Luz Apagada"}</h1>
 
-      <button onClick={toggleLed}>Cambiar Estado</button>
+      <button onClick={toggleLed}>Cambiar de Estado</button>
     </main>
   );
 }
