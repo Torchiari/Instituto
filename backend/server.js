@@ -39,6 +39,22 @@ app.post("/contador", (req, res) => {
   });
 });
 
+app.post("/encender", (req, res) => {
+  ledState = true;
+
+  res.json({
+    state: ledState,
+  });
+});
+
+app.post("/apagar", (req, res) => {
+  ledState = false;
+
+  res.json({
+    state: ledState,
+  });
+});
+
 app.listen(3001, () => {
   console.log("Servidor iniciado");
 });
