@@ -7,10 +7,12 @@ app.use(cors());
 app.use(express.json());
 
 let ledState = false;
+let contador = 0;
 
 app.get("/led", (req, res) => {
   res.json({
     state: ledState,
+    contador: contador,
   });
 });
 
@@ -19,6 +21,16 @@ app.post("/toggle", (req, res) => {
 
   res.json({
     state: ledState,
+    contador: contador,
+  });
+});
+
+app.post("/contador", (req, res) => {
+  contador = req.body.contador;
+
+  res.json({
+    ok: true,
+    contador: contador,
   });
 });
 
