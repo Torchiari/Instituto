@@ -12,6 +12,11 @@ let contador = 0;
 app.get("/led", (req, res) => {
   res.json({
     state: ledState,
+  });
+});
+
+app.get("/contador", (req, res) => {
+  res.json({
     contador: contador,
   });
 });

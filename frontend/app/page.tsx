@@ -7,12 +7,19 @@ export default function Home() {
   const [contador, setContador] = useState(0);
 
   const loadState = async () => {
-    const response = await fetch("https://instituto-z9pl.onrender.com/led");
+    const ledResponse = await fetch("https://instituto-z9pl.onrender.com/led");
 
-    const data = await response.json();
+    const ledData = await ledResponse.json();
 
-    setLed(data.state);
-    setContador(data.contador);
+    setLed(ledData.state);
+
+    const contadorResponse = await fetch(
+      "https://instituto-z9pl.onrender.com/contador",
+    );
+
+    const contadorData = await contadorResponse.json();
+
+    setContador(contadorData.contador);
   };
 
   const toggleLed = async () => {
